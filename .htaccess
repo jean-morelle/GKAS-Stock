@@ -1,0 +1,10 @@
+# XAMPP : http://localhost/gkas-stock/ redirige vers l'application (public/)
+# et interdit l'accès direct aux fichiers du projet (.env, vendor, storage...).
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /gkas-stock/
+    RewriteRule ^$ public/ [R=302,L]
+    RewriteRule ^(?!public/) - [F,L]
+</IfModule>
+
+Options -Indexes
